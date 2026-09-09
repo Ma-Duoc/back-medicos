@@ -39,4 +39,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.login-ecr.outputs.registry }}/ms-medicos:latest
+          tags: ${{ steps.login-ecr.outputs.registry }}/ms-medicos:latest 
