@@ -123,29 +123,44 @@ public class SecurityConfig {
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
 
+        // Orígenes permitidos (Incluyen entornos locales y GitHub Pages)
         cfg.setAllowedOrigins(List.of(
                 "http://localhost:3004",
                 "http://localhost:5173",
-                "http://localhost:3000"));
+                "http://localhost:3000",
+                "https://benjaminfredes.github.io",
+                "https://BenjaminFredes.github.io"));
 
+        // Métodos HTTP permitidos
         cfg.setAllowedMethods(List.of(
                 "GET",
                 "POST",
                 "PUT",
                 "DELETE",
-                "OPTIONS"));
+                "OPTIONS",
+                "HEAD",
+                "PATCH"));
 
+        // Encabezados permitidos en la solicitud
         cfg.setAllowedHeaders(List.of(
                 "Authorization",
                 "Content-Type",
                 "Accept",
-                "Origin"));
+                "Origin",
+                "X-Requested-With",
+                "Access-Control-Request-Method",
+                "Access-Control-Request-Headers"));
+
+        // Encabezados expuestos al cliente en la respuesta
+        cfg.setExposedHeaders(List.of(
+                "Authorization",
+                "Access-Control-Allow-Origin",
+                "Access-Control-Allow-Credentials"));
 
         cfg.setAllowCredentials(true);
         cfg.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-
         source.registerCorsConfiguration("/**", cfg);
 
         return source;
