@@ -1,0 +1,15 @@
+# Archivos de compilación local y binarios
+target/
+
+# Configuraciones del IDE / Editor
+.vscode/
+.idea/
+*.iml
+
+# Control de versiones
+.git/
+.github/
+
+# Logs y temporales
+*.log
+.DS_Store
