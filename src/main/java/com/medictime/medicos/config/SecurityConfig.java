@@ -129,7 +129,8 @@ public class SecurityConfig {
                 "http://localhost:5173",
                 "http://localhost:3000",
                 "https://benjaminfredes.github.io",
-                "https://BenjaminFredes.github.io"));
+                "https://BenjaminFredes.github.io",
+                "https://cristian250507.github.io"));
 
         // Métodos HTTP permitidos
         cfg.setAllowedMethods(List.of(
