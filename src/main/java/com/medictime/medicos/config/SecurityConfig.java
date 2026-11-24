@@ -117,7 +117,7 @@ public class SecurityConfig {
         decoder.setJwtValidator(validator);
 
         return decoder;
-    }
+    } 
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
